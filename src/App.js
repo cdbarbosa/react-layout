@@ -1,21 +1,22 @@
-import './App.css';
+import React from 'react'
 
-function App() {
+import HeroComponent from './components/HeroComponent'
+import SliderComponent from './components/SliderComponent'
+import InformationComponent from './components/InformationComponent'
+import ColapseComponent from './components/ColapseComponent'
+import ContactComponent from './components/ContactComponent'
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeroComponent />
+      <SliderComponent />
+      <InformationComponent />
+      <ColapseComponent />
+      <ContactComponent />
+      <div className="footer" style={{ height: '50px', width: '100%', padding: '1rem', backgroundColor: '#343434', textAlign: 'center'}}>
+        <h4 style={{ textTransform: 'uppercase', color: '#fff', fontWeight: '600'}}>Lorem Ipsum</h4>
+      </div>
     </div>
   );
 }

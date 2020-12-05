@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+  --primary: #53612f;
+  --secondary: #2d3b09;
+  --gray-primary: #6f6f6f;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.carousel-indicators {
+  background-color: rgba(69, 69, 69, 0.6);
+  margin: 0;
+  padding: 1rem;
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 1 !important;
+  position: relative;
+  border: 5px solid #343434;
+}
+
+.carousel-indicators li.active {
+  border: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.carousel-indicators li.active::before {
+  content: '';
+  height: 28px;
+  width: 28px;
+  background-color: #53612f;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: auto !important;
+}
+
+.carousel-control-next {
+  right: -45px;
+}
+
+.carousel-control-prev {
+  left: -45px;
 }
