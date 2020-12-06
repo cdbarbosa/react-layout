@@ -8,22 +8,28 @@ export const InformationComponentStyle = styled.div`
     padding: 4rem;
     height: 100%;
     width: 100%;
+
+    @media (max-width: 420px) {
+        padding: 4rem 1rem;
+        margin: 0;
+    }
 `
 
-export const InformationComponentImage = styled.div`
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    width: 500px;
+
+export const InformationComponentImage = styled.img`
     border: 20px solid rgba(69, 69, 69);
     border-radius: 50%;
+    width: 100%;
+    height: 100%;
 `
 
 export const DetailsInformationStyle = styled.div`
     color: #fff;
     margin-left: 20px;
+
+    @media (max-width: 420px) {
+        margin: 0;
+    }
 `
 
 export const DetailsInformationTitle = styled.h2`

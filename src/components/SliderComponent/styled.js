@@ -6,13 +6,10 @@ export const WrapperComponentStyle = styled.div`
 
 export const StyledComponentStyle = styled.div`
     padding: 4rem 7rem;
-`
-
-export const CardsStyled = styled.div`  
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    @media (max-width: 420px){
+        padding: 4rem 3rem;
+    }
 `
 
 export const CardStyle = styled.div`

@@ -8,14 +8,10 @@ export const ColapseComponentStyle = styled.div`
     padding: 4rem;
 `
 
-export const CollapseComponentImage = styled.div`
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 25vh;
-    width: 250px;
+export const CollapseComponentImage = styled.img`
+    display: inherit;
     margin: 0 auto;
+    height: 100%;
+    width: 100%;
     border: 10px solid rgba(69, 69, 69);
-    border-radius: 50%;
 `

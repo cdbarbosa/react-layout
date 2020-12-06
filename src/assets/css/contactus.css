@@ -1,0 +1,48 @@
+
+.group-form-name, .form-email, .form-telephone, .group-form-mensagem {
+    position: relative;
+  }
+  
+  .label-form {
+    position: absolute;
+    font-weight: 600;
+    top: 7px;
+    left: 15px;
+  }
+  
+  .form-email .label-form, .form-telephone .label-form{
+    left: 30px;
+  }
+  
+  .group-form-name .input-form {
+    padding-left: 75px;
+  }
+  
+  .form-email .input-form {
+    padding-left: 65px;
+  }
+  
+  .form-telephone .input-form {
+    padding-left: 90px;
+  }
+  
+  .group-form-mensagem .input-form {
+    padding-left: 110px;
+  }
+  
+  .input-form {
+    background-color: #bebebe;
+    border: none;
+  }
+  
+  .input-form::placeholder {
+    color: rgba(0, 0, 0, .5);
+  }
+  
+  .form-contact-us {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+  }

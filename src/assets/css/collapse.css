@@ -1,0 +1,18 @@
+.card-header-collapse {
+    background-color: #6f6f6f;
+    border: none;
+  }
+  
+  .card-header-collapse.active {
+    background-color: #fff;
+  }
+  
+  .card-header-collapse .header-title {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .card-header-collapse .header-title.active {
+    color: #333333;
+    font-weight: 600;
+  }

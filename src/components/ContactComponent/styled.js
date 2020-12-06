@@ -5,6 +5,10 @@ export const WrapperComponent = styled.div`
     position: relative;
     width: 100%;
     height: 50vh;
+
+    @media (max-width: 576px) {
+        height: 70vh !important;
+    }
 `
     
 export const ContactComponentStyle = styled.div`

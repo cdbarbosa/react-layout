@@ -5,6 +5,7 @@ import SliderComponent from './components/SliderComponent'
 import InformationComponent from './components/InformationComponent'
 import ColapseComponent from './components/ColapseComponent'
 import ContactComponent from './components/ContactComponent'
+import { Footer, FooterTitle } from './components/footer'
 
 const App = () => {
   return (
@@ -14,9 +15,9 @@ const App = () => {
       <InformationComponent />
       <ColapseComponent />
       <ContactComponent />
-      <div className="footer" style={{ height: '50px', width: '100%', padding: '1rem', backgroundColor: '#343434', textAlign: 'center'}}>
-        <h4 style={{ textTransform: 'uppercase', color: '#fff', fontWeight: '600'}}>Lorem Ipsum</h4>
-      </div>
+      <Footer>
+        <FooterTitle>Lorem Ipsum</FooterTitle>
+      </Footer>
     </div>
   );
 }

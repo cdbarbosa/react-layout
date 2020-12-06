@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import './assets/css/media.css';
+@import './assets/css/carousel.css';
+@import './assets/css/hero.css';
+@import './assets/css/collapse.css';
+@import './assets/css/contactus.css';
 
 :root {
   --primary: #53612f;
@@ -13,57 +18,12 @@ body, html, #root {
   font-family: 'Roboto', sans-serif;
 }
 
-.carousel-indicators {
-  background-color: rgba(69, 69, 69, 0.6);
-  margin: 0;
-  padding: 1rem;
+button:active, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.carousel-indicators li {
-  box-sizing: content-box;
-  flex: 0 1 auto;
-  width: 30px !important;
-  height: 30px !important;
-  border-radius: 50% !important;
-  margin-right: 3px;
-  margin-left: 3px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-color: #fff;
-  background-clip: padding-box;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  opacity: 1 !important;
-  position: relative;
-  border: 5px solid #343434;
-}
-
-.carousel-indicators li.active {
-  border: 0 !important;
-  width: 40px !important;
-  height: 40px !important;
-}
-
-.carousel-indicators li.active::before {
-  content: '';
-  height: 28px;
-  width: 28px;
-  background-color: #53612f;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.carousel-control-next, .carousel-control-prev {
-  width: auto !important;
-}
-
-.carousel-control-next {
-  right: -45px;
-}
-
-.carousel-control-prev {
-  left: -45px;
+.component {
+  max-width: 1200px;
+  margin: 0 auto;
 }

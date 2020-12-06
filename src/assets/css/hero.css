@@ -1,0 +1,26 @@
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-styled-icon {
+    animation: bounce .8s linear infinite;
+    padding-bottom: 20px;
+}
+
+.hero-styled-icon svg {
+    color: #333333;
+}
+
+.hero-styled-icon.icon-white svg {
+    color: #fff;
+}

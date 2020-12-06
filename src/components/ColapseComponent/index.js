@@ -12,87 +12,99 @@ class ColapseComponent extends Component {
   state = {
     screen: 700,
     collpase: false,
+    selected: '',
+    data: [
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+      { title: 'Lorem ipsum', body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut nisl sem, convallis in fermentum sed, iaculis ut
+      erat. Nam justo tellus, fermentum vel nunc pellentesque,
+      vehicula pellentesque nibh. Pellentesque sed sem enim.`},
+    ]
   };
 
-  handleCollapse = (e) => {};
+  handleCollapse = (e) => {
+    let index = 'header'+e
+    if (this.state.selected === '') {
+      document.getElementById(index).classList.add('active')
+    } else if (this.state.selected !== e) {
+      const target = 'header'+this.state.selected
+      document.getElementById(target).classList.remove('active')
+      document.getElementById(index).classList.add('active')
+    } else if (this.state.selected === e) {
+      document.getElementById(index).classList.remove('active')
+      this.setState({ selected: '' })
+      return;
+    }
+    this.setState({ selected: e })
+  };
 
   render() {
     return (
       <WrapperComponent>
-        <ColapseComponentStyle>
-          <Accordion defaultActiveKey="0">
-            <Card style={{ backgroundColor: 'transparent'}}>
-              <Card.Header
-                className="d-flex aling-items-center justify-content-between"
-                style={{ backgroundColor: "#6f6f6f", border: 'none' }}
-              >
-                <div className="header-title" style={{ color: "#fff" }}>
-                  <h3>Lorem ipsum</h3>
-                </div>
-                <Accordion.Toggle
-                  as={Button}
-                  variant="link"
-                  eventKey="0"
-                  onClick={(e) => this.handleCollapse()}
-                >
-                  <FaArrowDown color="white" />
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body style={{ backgroundColor: '#fff'}}>
-                  <div className="row justify-content-center align-items-center">
-                    <div className="col-12 col-sm-12 col-md-4 col-lg-3">
-                      <CollapseComponentImage image={Background} />
+        <div className="component">
+
+          <ColapseComponentStyle>
+            <Accordion>
+              {this.state.data.map((item, index) => (
+                <Card key={index} style={{ backgroundColor: 'transparent'}}>
+                  <Card.Header
+                    id={'header'+index}
+                    className="card-header-collapse d-flex aling-items-center justify-content-between"
+                  >
+                    <div className={"header-title " + (this.state.selected === index ? 'active' : '')}>
+                      <h3>{item.title}</h3>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-7 col-lg-9">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Ut nisl sem, convallis in fermentum sed, iaculis ut
-                        erat. Nam justo tellus, fermentum vel nunc pellentesque,
-                        vehicula pellentesque nibh. Pellentesque sed sem enim.
-                      </p>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-            <Card style={{ backgroundColor: 'transparent'}}>
-              <Card.Header
-                className="d-flex aling-items-center justify-content-between"
-                style={{ backgroundColor: "#6f6f6f", border: 'none' }}
-              >
-                <div className="header-title" style={{ color: "#fff" }}>
-                  <h3>Lorem ipsum</h3>
-                </div>
-                <Accordion.Toggle
-                  as={Button}
-                  variant="link"
-                  eventKey="1"
-                  onClick={(e) => this.handleCollapse()}
-                >
-                  <FaArrowDown color="white" />
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey="1">
-                <Card.Body style={{ backgroundColor: '#fff'}}>
-                  <div className="row justify-content-center align-items-center">
-                    <div className="col-12 col-sm-12 col-md-4 col-lg-3">
-                      <CollapseComponentImage image={Background} />
-                    </div>
-                    <div className="col-12 col-sm-12 col-md-7 col-lg-9">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Ut nisl sem, convallis in fermentum sed, iaculis ut
-                        erat. Nam justo tellus, fermentum vel nunc pellentesque,
-                        vehicula pellentesque nibh. Pellentesque sed sem enim.
-                      </p>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
-        </ColapseComponentStyle>
+                    <Accordion.Toggle
+                      as={Button}
+                      variant="link"
+                      eventKey={index.toString()}
+                      onClick={() => this.handleCollapse(index)}
+                    >
+                      {this.state.selected === index ? (
+                          <FaArrowUp color="#333"/>
+                        ) : (
+                          <FaArrowDown color="white" />
+                      )}
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey={index.toString()}>
+                    <Card.Body style={{ backgroundColor: '#fff'}}>
+                      <div className="row justify-content-center align-items-center">
+                        <div className="collapse-image col-12 col-sm-12 col-md-4 col-lg-3">
+                          <CollapseComponentImage src={Background} />
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-7 col-lg-9">
+                          <p>
+                            {item.body}
+                          </p>
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              ))}
+            </Accordion>
+          </ColapseComponentStyle>
+        </div>
       </WrapperComponent>
     );
   }
